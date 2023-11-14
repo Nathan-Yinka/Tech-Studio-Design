@@ -5,7 +5,7 @@ const PasswordReset = () => {
   return (
     <div className=''>
         <PasswordHeader/>
-        <div className='flex flex-col space-y-10 justify-center mt-5 md:w-8/12 lg:w-5/12  m-auto container mb-2'>
+        <div className='flex flex-col space-y-10 justify-center mt-10 md:w-8/12 lg:w-5/12  m-auto container mb-5 p-1 md:p-0'>
             <h2 className='text-center text-4xl font-bold'>Reset Your Password.</h2>
             <p className='font-light text-center text-lg'>To reset your password, enter the email address associated with your account. We’ll send you a link to create a new password.</p>
 

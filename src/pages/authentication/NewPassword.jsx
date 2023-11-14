@@ -11,7 +11,7 @@ const NewPassword = () => {
   return (
     <div>
         <PasswordHeader/>
-        <div className='flex flex-col space-y-10 justify-center mt-5 md:w-8/12 lg:w-5/12  m-auto container mb-2'>
+        <div className='flex flex-col space-y-10 justify-center mt-10 md:w-8/12 lg:w-5/12  m-auto container mb-5 p-1 md:p-0'>
             <h3 className='font-semibold text-2xl text-center'>To reset your password, please enter a new password below.</h3>
            <div className=''>
            <div className="flex flex-col gap-3  relative mt-4">
