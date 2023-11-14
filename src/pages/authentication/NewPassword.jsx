@@ -2,10 +2,12 @@ import React, { useState } from 'react'
 import PasswordHeader from '../../components/PasswordHeader'
 import eyeOpen from "../../assets/login/eye-open.svg";
 import eyeClose from "../../assets/login/eye-close.svg";
+import PasswordResetModal from './PasswordResetModal';
 
 const NewPassword = () => {
     const [showPassword, setShowPassword] = useState(false);
     const [showConfirmPassword, setShowConfirmPassword] = useState(false)
+    const [showModal,setShowModal] = useState(false)
   return (
     <div>
         <PasswordHeader/>
@@ -34,13 +36,13 @@ const NewPassword = () => {
             </div>
 
             <div className="flex flex-col gap-3  relative mt-4">
-              <label htmlFor="password" className=" text-sm font-bold">
+              <label htmlFor="password-confirm" className=" text-sm font-bold">
                Confirm Password 
               </label>
               <input
                 type={showConfirmPassword?"text":"password"}
                 className=" outline-none pl-2 pr-[40px] rounded-sm border-black/50 border-[0.794px] py-3 placeholder:text-black/75"
-                id="password"
+                id="password-confirm"
                 placeholder='Confirm new password'
               />
               {showConfirmPassword ? (
@@ -55,11 +57,12 @@ const NewPassword = () => {
             </div>
 
             <div>
-                <button className="authenication-btn mt-8 py-3">Reset Password</button>
+                <button className="authenication-btn mt-8 py-3" onClick={()=>setShowModal(!showModal)}>Reset Password</button>
             </div>
            </div>
 
         </div>
+        {showModal &&  <PasswordResetModal/>}
     </div>
   )
 }
