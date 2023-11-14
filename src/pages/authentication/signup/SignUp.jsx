@@ -1,16 +1,16 @@
 import React, { useState } from "react";
-import logo from "../../assets/login/TSA community 3.svg";
-import eyeOpen from "../../assets/login/eye-open.svg";
-import eyeClose from "../../assets/login/eye-close.svg";
-import fotter from  "../../assets/login/Frame 1171275462.svg";
-import twitter from "../../assets/login/twitter.svg";
-import facebook from "../../assets/login/facebook.svg";
-import goggle from "../../assets/login/goggle.svg";
-import CustomSelect from "../../components/CustomSelect";
-import hint from "../../assets/signup/Group 1171274927.svg"
+import logo from "../../../assets/login/TSA community 3.svg";
+import eyeOpen from "../../../assets/login/eye-open.svg";
+import eyeClose from "../../../assets/login/eye-close.svg";
+import fotter from  "../../../assets/login/Frame 1171275462.svg";
+import twitter from "../../../assets/login/twitter.svg";
+import facebook from "../../../assets/login/facebook.svg";
+import goggle from "../../../assets/login/goggle.svg";
+import CustomSelect from "../../../components/CustomSelect";
+import hint from "../../../assets/signup/Group 1171274927.svg"
 import "./signup.css"
 import { Link } from "react-router-dom";
-import hero from "../../assets/signup/logo.svg"
+import hero from "../../../assets/signup/logo.svg"
 const SignUp = () => {
     const [showPassword, setShowPassword] = useState(false);
     const [showConfirmPassword, setShowConfirmPassword] = useState(false)
@@ -148,12 +148,12 @@ const SignUp = () => {
             <p className="text-center">Already have an account?? <Link to="/login"><span className="text-[#0266F4] font-light"> Login</span></Link></p>
           </div>
 
-          <div className="mt-5 lg:bg-[#D9D9D9]">
+          <div className="mt-4 lg:bg-[#D9D9D9]">
              <div className="flex justify-center w-full">
              <img src={fotter} alt="" className="w-full"/>
              </div>
 
-             <div className="flex justify-center space-x-4 my-10">
+             <div className="flex justify-center space-x-4 my-4">
                 <img src={twitter} alt="" className=" hover:scale-125 transition ease-in-out"/>
                 <img src={facebook} alt="" className=" hover:scale-125 transition ease-in-out"/>
                 <img src={goggle} alt="" className=" hover:scale-125 transition ease-in-out"/>

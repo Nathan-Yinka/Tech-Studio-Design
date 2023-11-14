@@ -1,12 +1,12 @@
 import React, { useState } from "react";
-import logo from "../../assets/login/TSA community 3.svg";
-import hero from "../../assets/login/Vector.svg";
-import eyeOpen from "../../assets/login/eye-open.svg";
-import eyeClose from "../../assets/login/eye-close.svg";
-import fotter from  "../../assets/login/Frame 1171275462.svg";
-import twitter from "../../assets/login/twitter.svg";
-import facebook from "../../assets/login/facebook.svg";
-import goggle from "../../assets/login/goggle.svg";
+import logo from "./../../../assets/login/TSA community 3.svg"
+import hero from "../../../assets/login/Vector.svg";
+import eyeOpen from "../../../assets/login/eye-open.svg";
+import eyeClose from "../../../assets/login/eye-close.svg";
+import fotter from  "../../../assets/login/Frame 1171275462.svg"
+import twitter from "../../../assets/login/twitter.svg";
+import facebook from "../../../assets/login/facebook.svg"
+import goggle from "../../../assets/login/goggle.svg"
 import { Link } from "react-router-dom";
 
 const Login = () => {
