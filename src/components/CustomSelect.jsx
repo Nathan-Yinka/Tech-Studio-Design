@@ -10,7 +10,7 @@ const CustomSelect = ({dropDownData,className,dropDownValue,setDropDownValue}) =
     }
   return (
     <div className='relative'>
-        <div className={` rounded-sm  flex  items-center px-2 bg-white justify-between relative ${className}`} onClick={()=>setShowDropDown(!showDropDown)}>
+        <div className={`flex  items-center px-2 bg-white justify-between relative ${className}`} onClick={()=>setShowDropDown(!showDropDown)}>
             <div>{dropDownValue?dropDownValue.name:"Select Community"}</div>
             <div className={`pr-3  ${showDropDown && "rotate-180 pl-3 transition"}`}><img src={dropIcon} alt="" /></div>
         </div>

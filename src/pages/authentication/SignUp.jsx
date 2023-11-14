@@ -1,16 +1,16 @@
 import React, { useState } from "react";
-import logo from "../../../assets/login/TSA community 3.svg";
-import eyeOpen from "../../../assets/login/eye-open.svg";
-import eyeClose from "../../../assets/login/eye-close.svg";
-import fotter from  "../../../assets/login/Frame 1171275462.svg";
-import twitter from "../../../assets/login/twitter.svg";
-import facebook from "../../../assets/login/facebook.svg";
-import goggle from "../../../assets/login/goggle.svg";
-import CustomSelect from "../../../components/CustomSelect";
-import hint from "../../../assets/signup/Group 1171274927.svg"
-import "./signup.css"
+import logo from "../../assets/login/TSA community 3.svg";
+import eyeOpen from "../../assets/login/eye-open.svg";
+import eyeClose from "../../assets/login/eye-close.svg";
+import fotter from  "../../assets/login/Frame 1171275462.svg";
+import twitter from "../../assets/login/twitter.svg";
+import facebook from "../../assets/login/facebook.svg";
+import goggle from "../../assets/login/goggle.svg";
+import CustomSelect from "../../components/CustomSelect"
+import hint from "../../assets/signup/Group 1171274927.svg"
+import "./../../styles/signup.css"
 import { Link } from "react-router-dom";
-import hero from "../../../assets/signup/logo.svg"
+import hero from "../../assets/signup/logo.svg"
 const SignUp = () => {
     const [showPassword, setShowPassword] = useState(false);
     const [showConfirmPassword, setShowConfirmPassword] = useState(false)
@@ -62,7 +62,7 @@ const SignUp = () => {
                 </label>
                 <input
                     type="text"
-                    className="h-[45px] outline-none px-2 rounded-sm border-black/50 border-[0.794px]"
+                    className="h-[45px] outline-none px-2 rounded-md border-black/50 border-[0.794px]"
                     id="firstName"
                 />
                 </div>
@@ -73,7 +73,7 @@ const SignUp = () => {
                 </label>
                 <input
                     type="text"
-                    className="h-[45px] outline-none px-2 rounded-sm border-black/50 border-[0.794px]"
+                    className="h-[45px] outline-none px-2 rounded-md border-black/50 border-[0.794px]"
                     id="lastName"
                 />
                 </div>
@@ -83,7 +83,7 @@ const SignUp = () => {
                 <label htmlFor="Community" className=" text-sm font-bold">
                   Community Group
                 </label>
-                <CustomSelect dropDownData={dropDownData} className="h-[45px] rounded-sm border-black/50 border-[0.794px]" dropDownValue={dropDownValue} setDropDownValue={setDropDownValue}/>
+                <CustomSelect dropDownData={dropDownData} className="h-[45px] rounded-md border-black/50 border-[0.794px]" dropDownValue={dropDownValue} setDropDownValue={setDropDownValue}/>
             </div>
 
             <div className="flex flex-col gap-2 mt-4">
@@ -96,7 +96,7 @@ const SignUp = () => {
                 </div>
                 <input
                   type="email"
-                  className="h-[45px] outline-none px-2 rounded-sm border-black/50 border-[0.794px]"
+                  className="h-[45px] outline-none px-2 rounded-md border-black/50 border-[0.794px]"
                   id="email"
                 />
               </div>
@@ -107,7 +107,7 @@ const SignUp = () => {
               </label>
               <input
                 type={showPassword?"text":"password"}
-                className="h-[45px] outline-none pl-2 pr-[40px] rounded-sm border-black/50 border-[0.794px]"
+                className="h-[45px] outline-none pl-2 pr-[40px] rounded-md border-black/50 border-[0.794px]"
                 id="password"
               />
               {showPassword ? (
@@ -127,7 +127,7 @@ const SignUp = () => {
               </label>
               <input
                 type={showConfirmPassword?"text":"password"}
-                className="h-[45px] outline-none pl-2 pr-[40px] rounded-sm border-black/50 border-[0.794px]"
+                className="h-[45px] outline-none pl-2 pr-[40px] rounded-md border-black/50 border-[0.794px]"
                 id="password"
               />
               {showConfirmPassword ? (
@@ -141,7 +141,7 @@ const SignUp = () => {
               )}
             </div>
             
-            <button className="bg-[#0266F4] w-full rounded-sm text-white py-2.5 font-bold mt-8  hover:opacity-90">Register</button>
+            <button className="authenication-btn mt-8 py-2.5">Register</button>
           </form>
 
           <div className="mt-10">

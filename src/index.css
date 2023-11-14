@@ -8,4 +8,8 @@
     html{
         @apply font-['Open_Sans']
     }
+
+    .authenication-btn{
+        @apply bg-[#0266F4] w-full rounded-md text-white py-2.5 font-bold   hover:opacity-90 hover:bg-white hover:border-[#0266F4] hover:border-[1px] hover:text-[#0266F4] transition-all;
+    }
 }

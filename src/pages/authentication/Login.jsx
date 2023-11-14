@@ -1,12 +1,12 @@
 import React, { useState } from "react";
-import logo from "./../../../assets/login/TSA community 3.svg"
-import hero from "../../../assets/login/Vector.svg";
-import eyeOpen from "../../../assets/login/eye-open.svg";
-import eyeClose from "../../../assets/login/eye-close.svg";
-import fotter from  "../../../assets/login/Frame 1171275462.svg"
-import twitter from "../../../assets/login/twitter.svg";
-import facebook from "../../../assets/login/facebook.svg"
-import goggle from "../../../assets/login/goggle.svg"
+import logo from "./../../assets/login/TSA community 3.svg"
+import hero from "../../assets/login/Vector.svg";
+import eyeOpen from "../../assets/login/eye-open.svg";
+import eyeClose from "../../assets/login/eye-close.svg";
+import fotter from  "../../assets/login/Frame 1171275462.svg"
+import twitter from "../../assets/login/twitter.svg";
+import facebook from "../../assets/login/facebook.svg"
+import goggle from "../../assets/login/goggle.svg"
 import { Link } from "react-router-dom";
 
 const Login = () => {
@@ -41,7 +41,7 @@ const Login = () => {
                 </label>
                 <input
                   type="email"
-                  className="h-[45px] outline-none px-2 rounded-sm border-black/50 border-[0.794px]"
+                  className="h-[45px] outline-none px-2 rounded-md border-black/50 border-[0.794px]"
                   id="email"
                 />
               </div>
@@ -52,7 +52,7 @@ const Login = () => {
                 </label>
                 <input
                   type={showPassword?"text":"password"}
-                  className="h-[45px] outline-none pl-2 pr-[40px] rounded-sm border-black/50 border-[0.794px]"
+                  className="h-[45px] outline-none pl-2 pr-[40px] rounded-md border-black/50 border-[0.794px]"
                   id="password"
                 />
                 <p className="text-[#0266F4] font-light text-sm">
@@ -69,7 +69,7 @@ const Login = () => {
                 )}
               </div>
               
-              <button className="bg-[#0266F4] w-full rounded-sm text-white py-2.5 font-bold mt-8 hover:opacity-90">Login</button>
+              <button className="authenication-btn py-2.5 mt-8">Login</button>
             </form>
 
             <div className="mt-3">
