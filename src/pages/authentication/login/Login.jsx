@@ -55,8 +55,8 @@ const Login = () => {
                   className="h-[45px] outline-none pl-2 pr-[40px] rounded-sm border-black/50 border-[0.794px]"
                   id="password"
                 />
-                <p className="text-[#0266F4] font-light text-sm cursor-pointer">
-                  Forgot Password?
+                <p className="text-[#0266F4] font-light text-sm">
+                  <Link to={"/password-reset"}>Forgot Password?</Link>
                 </p>
                 {showPassword ? (
                   <div className=" absolute w-6 h-6 top-[40%] right-[10px] cursor-pointer">
