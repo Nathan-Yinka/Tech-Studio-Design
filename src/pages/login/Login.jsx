@@ -3,10 +3,11 @@ import logo from "../../assets/login/TSA community 3.svg";
 import hero from "../../assets/login/Vector.svg";
 import eyeOpen from "../../assets/login/eye-open.svg";
 import eyeClose from "../../assets/login/eye-close.svg";
-import fotter from  "../../assets/login/Frame 1171275462.svg"
-import twitter from "../../assets/login/twitter.svg"
-import facebook from "../../assets/login/facebook.svg"
-import goggle from "../../assets/login/goggle.svg"
+import fotter from  "../../assets/login/Frame 1171275462.svg";
+import twitter from "../../assets/login/twitter.svg";
+import facebook from "../../assets/login/facebook.svg";
+import goggle from "../../assets/login/goggle.svg";
+import { Link } from "react-router-dom";
 
 const Login = () => {
   const [showPassword, setShowPassword] = useState(false);
@@ -16,7 +17,7 @@ const Login = () => {
       <div className="bg-[#0266F4] lg:w-1/2">
         <div className="flex flex-col space-y-5 h-full justify-around items-center">
           <div className="pt-2 lg:pt-0">
-            <img src={logo} alt="logo" />
+            <img src={logo} alt="logo"/>
           </div>
           <div>
             <img src={hero} alt="Hero Image" className="hidden lg:block"/>
@@ -29,7 +30,7 @@ const Login = () => {
         <div className="min-h-[650px] lg:bg-[#D9D9D9] w-full lg:mx-10 rounded-xl overflow-hidden">
           <div className="h-[10px] bg-[#0266F4] w-full hidden lg:block"></div>
           <div className="w-11/12 lg:w-10/12 m-auto">
-            <h3 className="font-bold text-3xl mt-3 lg:mt-12 mb-2">Welcome Back!</h3>
+            <h3 className="font-bold text-3xl mt-5 lg:mt-12 mb-3">Welcome Back!</h3>
             <p className="">Let’s help you get into your account.</p>
 
             {/* The Form */}
@@ -40,7 +41,7 @@ const Login = () => {
                 </label>
                 <input
                   type="email"
-                  className="h-[45px] outline-none px-2 rounded-sm border-[rgba(0, 0, 0, 0.50)] border-2 lg:border-1"
+                  className="h-[45px] outline-none px-2 rounded-sm border-black/50 border-[0.794px]"
                   id="email"
                 />
               </div>
@@ -51,10 +52,10 @@ const Login = () => {
                 </label>
                 <input
                   type={showPassword?"text":"password"}
-                  className="h-[45px] outline-none pl-2 pr-[40px] rounded-sm border-[rgba(0, 0, 0, 0.50)] border-2 lg:border"
+                  className="h-[45px] outline-none pl-2 pr-[40px] rounded-sm border-black/50 border-[0.794px]"
                   id="password"
                 />
-                <p className="text-[#0266F4] font-light text-sm">
+                <p className="text-[#0266F4] font-light text-sm cursor-pointer">
                   Forgot Password?
                 </p>
                 {showPassword ? (
@@ -72,7 +73,7 @@ const Login = () => {
             </form>
 
             <div className="mt-3">
-              <p className="text-center">New User? <span className="text-[#0266F4] font-light"> Register</span></p>
+              <p className="text-center">New User? <Link to="/signup"><span className="text-[#0266F4] font-light"> Register</span></Link></p>
             </div>
 
             <div className="mt-5">
