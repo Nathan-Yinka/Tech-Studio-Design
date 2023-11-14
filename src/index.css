@@ -4,6 +4,10 @@
 @tailwind components;
 @tailwind utilities;
 
+body{
+    font-family: 'Open Sans', 'Helvetica Neue', sans-serif;
+}
+
 @layer base{
     html{
         @apply font-['Open_Sans']
@@ -11,5 +15,11 @@
 
     .authenication-btn{
         @apply bg-[#0266F4] w-full rounded-md text-white py-2.5 font-bold   hover:opacity-90 hover:bg-white hover:border-[#0266F4] hover:border-[1px] hover:text-[#0266F4] transition-all;
+    }
+    .default-btn{
+        @apply bg-customBlue-100 text-white py-[10px] px-[33px] rounded-[10px] hover:bg-blue-700
+    }
+    .page-width{
+        @apply max-w-[85%] w-full m-auto
     }
 }
