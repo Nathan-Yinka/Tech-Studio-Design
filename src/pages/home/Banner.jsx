@@ -12,7 +12,7 @@ const Banner = () => {
         <h1 className="text-[48px] font-[700] capitalize">
           Explore, connect and innovate
         </h1>
-        <p className="text-[24px] font-[400]">
+        <p className="text-[20px] font-[400]">
           Dive into a world of limitless possibilities, where coding languages
           speak louder than words and digital innovations shape the future.
           Engage in discussions, collaborate on projects, and build lasting
