@@ -22,7 +22,6 @@ function App() {
             <Route path="/" element={<LandingPage />} />
             <Route path="/talent" element={<FindTalent />} />
           </Route>
-
         </Routes>
       </Router>
     </>

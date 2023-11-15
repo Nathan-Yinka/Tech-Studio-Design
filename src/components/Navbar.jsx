@@ -24,7 +24,7 @@ const Navbar = () => {
         <div
           className={`flex flex-1 items-center ${
             hamburger
-              ? "absolute z-50 right-0 top-[4.6rem] max-w-[450px] text-lg w-full bg-[rgba(31,38,102,.8)] backdrop-blur-lg p-10 flex flex-col items-baseline mt-1 space-y-10 lg:space-y-0"
+              ? "absolute z-50 right-0 top-[4.6rem] max-w-[450px] text-lg w-full bg-[rgba(31,38,102,.8)] backdrop-blur-lg p-10 pl-2 flex flex-col items-baseline mt-1 space-y-10 lg:space-y-0"
               : "hidden lg:flex"
           }`}
         >
@@ -34,7 +34,7 @@ const Navbar = () => {
             }`}
           >
             <li>Explore Community</li>
-            <li>Find Talent</li>
+            <Link to={"/talent"}><li>Find Talent</li></Link>
             <li>For You</li>
           </ul>
           <div className="lg:flex items-center gap-5">
