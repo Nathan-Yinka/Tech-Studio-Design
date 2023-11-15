@@ -3,10 +3,12 @@ import box from "../../assets/talent/box.svg"
 import layer1 from "../../assets/talent/Layer_1.svg"
 import layer2 from "../../assets/talent/layer2.svg"
 import layer3 from "../../assets/talent/Слой_1.svg"
+import Navbar from '../../components/Navbar'
 
 const FindTalent = () => {
   return (
     <div className='p-1 md:p-0'>
+        <Navbar/>
         <div className=' relative '>
         <div className='flex container mx-auto justify-between flex-col md:flex-row  h-[500px]' >
             <div className='flex flex-col gap-4 md:w-1/2 md:mt-28'>

@@ -10,7 +10,8 @@ export default {
         customBlue:{
           100:"#0266F4",
           200:"#1F2666"
-        }
+        },
+        fadedBlack: "#292929"
       }
     },
   },
