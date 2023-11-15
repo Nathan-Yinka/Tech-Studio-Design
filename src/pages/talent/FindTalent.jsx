@@ -14,7 +14,7 @@ const FindTalent = () => {
     <div className=''>
         {/* <Navbar/> */}
         <div className=' relative '>
-        <div className='flex page-width justify-between flex-col md:flex-row  h-[500px]' >
+        <div className='flex page-width justify-between flex-col md:flex-row  h-[500px] md:mt-10' >
             <div className='flex flex-col gap-4 md:w-1/2 md:mt-28 mt-5'>
                 <h3 className='text-2xl lg:text-4xl font-bold text-customBlue-200 text-center md:text-left'>Find the best talents <br/>to grow your team</h3>
                 <p className='md:pr-28 text-lg font-light'>TechStudio is relied upon by a good amount of great companies for finding competent talents. We mould our talents to fit into their needed positions and your company culture.</p>
