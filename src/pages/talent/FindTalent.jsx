@@ -8,19 +8,19 @@ import Navbar from '../../components/Navbar'
 const FindTalent = () => {
   return (
     <div className='p-1 md:p-0'>
-        <Navbar/>
+        {/* <Navbar/> */}
         <div className=' relative '>
         <div className='flex container mx-auto justify-between flex-col md:flex-row  h-[500px]' >
             <div className='flex flex-col gap-4 md:w-1/2 md:mt-28'>
                 <h3 className='text-2xl lg:text-4xl font-bold text-customBlue-200 text-center md:text-left'>Find the best talents <br/>to grow your team</h3>
                 <p className='md:pr-28 text-lg font-light'>TechStudio is relied upon by a good amount of great companies for finding competent talents. We mould our talents to fit into their needed positions and your company culture.</p>
             </div>
-            <div className='md:p-10 md:pr-20 lg:p-20 md:bg-[#DCE9FE]  md:w-1/2 md:absolute right-0 lg:pr-40  h-[500px]' style={{zIndex:"10000000"}}>
+            <div className='md:p-10 md:pr-20 lg:p-20 md:bg-[#DCE9FE]  md:w-1/2 md:absolute right-0 lg:pr-40  h-[500px]' style={{zIndex:"1"}}>
                 <div className='relative'>
                 <div className='hidden md:block absolute  -right-10' style={{top:"13.7rem"}}>
                         <img src={box} alt="" className='  '/>
                 </div>
-                <form action="" className='bg-white flex flex-col gap-12 mt-6 md:mt-0  md:p-10 md:shadow-xl absolute w-full' style={{zIndex:"10000000"}}>
+                <form action="" className='bg-white flex flex-col gap-12 mt-6 md:mt-0  md:p-10 md:shadow-xl absolute w-full' style={{zIndex:"2"}}>
                     <input type="text"
                     className="h-[45px] outline-none px-2 rounded-md border-black/50 border-[0.794px] placeholder:text-black/75"
                     placeholder='Your Full Name'

@@ -11,8 +11,8 @@ const Navbar = () => {
     setHamburger(!hamburger);
   };
   return (
-    <div className="bg-customBlue-200 text-white py-3">
-      <div className="container mx-auto flex justify-between items-center">
+    <div className="sticky z-40 inset-x-0 top-0 bg-customBlue-200 text-white py-3">
+      <div className="page-width flex justify-between items-center">
         <Link to="/">
           <img src={logo} alt="logo" />
         </Link>
@@ -28,19 +28,35 @@ const Navbar = () => {
               : "hidden lg:flex"
           }`}
         >
-          <ul className={`flex flex-1 justify-center items-center gap-5 ${hamburger ? "items-baseline gap-10 flex-col-reverse" : ""}`}>
+          <ul
+            className={`flex flex-1 justify-center items-center gap-5 ${
+              hamburger ? "items-baseline gap-10 flex-col-reverse" : ""
+            }`}
+          >
             <li>Explore Community</li>
             <li>Find Talent</li>
             <li>For You</li>
           </ul>
-          <div className="lg:flex items-center gap-3">
+          <div className="lg:flex items-center gap-5">
             <Link to="signup">
-              <button type="button" className={`default-btn ${hamburger ? "block w-[200px]" : ""}`}>
+              <button
+                type="button"
+                className={`default-btn ${hamburger ? "block w-[200px]" : ""}`}
+              >
                 Register
               </button>
             </Link>
             <Link to="login">
-              <button type="button" className={`${hamburger ? "default-btn w-[200px] bg-white text-customBlue-100 mt-5" : ""}`}>Login</button>
+              <button
+                type="button"
+                className={`${
+                  hamburger
+                    ? "default-btn w-[200px] bg-white hover:bg-slate-200 text-customBlue-100 mt-5"
+                    : ""
+                }`}
+              >
+                Login
+              </button>
             </Link>
           </div>
         </div>
