@@ -6,6 +6,7 @@ import PasswordReset from "./pages/authentication/PasswordReset";
 import SignUp from "./pages/authentication/SignUp";
 import Navbar from "./components/Navbar";
 import LandingPage from "./pages/home/LandingPage";
+import Footer from "./components/Footer";
 
 function App() {
   return (
@@ -19,6 +20,7 @@ function App() {
           <Route path="/password-reset" element={<PasswordReset />} />
           <Route path="/new-password" element={<NewPassword />} />
         </Routes>
+        <Footer />
       </Router>
     </>
   );

@@ -3,7 +3,7 @@ import heroImg from "../../assets/homePage/Hero section Image.svg";
 
 const Banner = () => {
   return (
-    <div className="w-full lg:flex flex-row-reverse justify-between items-center space-y-10 lg:space-y-0 my-5">
+    <div className="w-full lg:flex flex-row-reverse justify-between items-center space-y-10 lg:space-y-0 my-10">
       <div className="w-full lg:w-[45%] flex justify-center lg:justify-end">
         <img src={heroImg} alt="" />
       </div>
