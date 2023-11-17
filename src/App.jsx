@@ -7,6 +7,7 @@ import SignUp from "./pages/authentication/SignUp";
 import LandingPage from "./pages/home/LandingPage";
 import FindTalent from "./pages/talent/FindTalent";
 import ExternalLayout from "./pages/Layouts/ExternalLayout";
+import JobPoster from "./pages/talent/JobPoster";
 
 function App() {
   return (
@@ -17,6 +18,7 @@ function App() {
           <Route path="/signup" element={<SignUp />} />
           <Route path="/password-reset" element={<PasswordReset />} />
           <Route path="/new-password" element={<NewPassword />} />
+          <Route path="/job-poster" element={<JobPoster />} />
 
           <Route element={<ExternalLayout/>}>
             <Route path="/" element={<LandingPage />} />

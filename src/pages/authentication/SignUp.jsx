@@ -34,10 +34,10 @@ const SignUp = () => {
   return (
     <div className=" flex  flex-col lg:flex-row h-screen overflow-auto">
     {/* The login logo */}
-    <div className="bg-[#0266F4] lg:w-1/2 lg:h-[100vh]" >
+    <div className="bg-[#0266F4] lg:w-1/2 lg:h-[100vh]">
       <div className="flex flex-col space-y-5 h-full justify-around items-center">
         <div className="pt-2 lg:pt-0">
-          <img src={logo} alt="logo"/>
+          <Link to={"/"}><img src={logo} alt="logo"/></Link>
         </div>
         <div>
           <img src={hero} alt="Hero Image" className="hidden lg:block"/>

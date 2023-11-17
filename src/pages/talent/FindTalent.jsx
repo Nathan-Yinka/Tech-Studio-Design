@@ -1,4 +1,4 @@
-import React from 'react'
+import React, { useEffect, useState } from 'react'
 import box from "../../assets/talent/box.svg"
 import layer1 from "../../assets/talent/Layer_1.svg"
 import layer2 from "../../assets/talent/layer2.svg"
@@ -8,8 +8,55 @@ import vector2 from "../../assets/talent/Vector2.svg"
 import vector3 from "../../assets/talent/Vector3.svg"
 import vector4 from "../../assets/talent/Vector4.svg"
 import vector5 from "../../assets/talent/Vector5.svg"
+import { useNavigate } from 'react-router-dom'
+import useAxiosPost from '../../hooks/useAxiosPost'
+import Spinners from '../loaders/Spinner'
 
 const FindTalent = () => {
+    const apiUrl = "https://techstudiocommunity.onrender.com";
+    const navigate = useNavigate();
+    const [mail, setMail] = useState("");
+    const [name, setName] = useState("");
+    const [error,setError] = useState({})
+    const { triggerPost, response, isPosting, postError } = useAxiosPost();
+
+  useEffect(()=>{
+    if (response && !postError){
+        navigate(`/job-poster?email=${mail}`);
+    }
+},[response])
+
+  const isEmpty = (obj) => {
+    return Object.entries(obj).length === 0;
+    };
+
+  const handleSubmit = async (e) => {
+    e.preventDefault();
+    let errorFound = false
+
+    if (name === "") {
+        setError(prevError => ({ ...prevError, nameError: true }));
+      errorFound = true
+    }
+    if (mail === "" || !mail.includes("@") || !mail.includes(".com")) {
+        setError(prevError => ({ ...prevError, mailError: true }));
+        setMail("")
+        errorFound = true
+    }
+
+    if (errorFound) return;
+
+    var formdata = new FormData();
+    formdata.append("email", mail);
+    formdata.append("full_name", name);
+    triggerPost(formdata,`${apiUrl}/api/jobs/`);    
+}
+
+function handlecheck(e) {
+    if (e.target.name === "email") setError(prevError => ({ ...prevError, mailError: "" }));
+    if (e.target.name === "name")setError(prevError => ({ ...prevError, nameError: "" }));
+  }
+
   return (
     <div className=''>
         {/* <Navbar/> */}
@@ -22,18 +69,24 @@ const FindTalent = () => {
             <div className='md:p-10 md:pr-20 lg:p-20 md:bg-[#DCE9FE]  md:w-1/2 md:absolute right-0 lg:pr-40  h-[500px]' style={{zIndex:"1"}}>
                 <div className='relative'>
                 <div className='hidden md:block absolute  -right-10' style={{top:"13.7rem"}}>
-                        <img src={box} alt="" className='  '/>
+                        <img src={box} alt="" className=''/>
                 </div>
-                <form action="" className='bg-white flex flex-col gap-12 mt-6 md:mt-0  md:p-10 md:shadow-xl absolute w-full rounded-lg' style={{zIndex:"2"}}>
+                <form onSubmit={handleSubmit} action="" className='bg-white flex flex-col gap-12 mt-6 md:mt-0  md:p-10 md:shadow-xl absolute w-full rounded-lg' style={{zIndex:"2"}}>
                     <input type="text"
-                    className="h-[45px] outline-none px-2 rounded-md border-black/50 border-[0.794px] placeholder:text-black/75"
-                    placeholder='Your Full Name'
+                    className={`h-[45px] outline-none px-2 rounded-md border-black/50 border-[0.794px] placeholder:text-black/75 ${error.nameError && "form-error"}`}
+                    placeholder={`${error.nameError?"Enter your name":'Your Full Name'}`}
+                    value={name}
+                    name="name"
+                    onChange={(e)=>{setName(e.target.value); handlecheck(e)}}
                     />
                     <input type="text"
-                    className="h-[45px] outline-none px-2 rounded-md border-black/50 border-[0.794px] placeholder:text-black/75"
-                    placeholder='Your Email'
+                    className={`h-[45px] outline-none px-2 rounded-md border-black/50 border-[0.794px] placeholder:text-black/75 ${error.mailError && "form-error"}`}
+                    placeholder={`${error.mailError?"Enter a vaild mail":'Your Email'}`}
+                    value={mail}
+                    name="email"
+                    onChange={(e)=>{setMail(e.target.value); handlecheck(e)}}
                     />
-                <button className="authenication-btn py-3">Get Started</button>    
+                <button className="authenication-btn py-3 ">{isPosting?<Spinners/>:"Get Started"}</button>    
                 </form>
                 </div>
             </div>

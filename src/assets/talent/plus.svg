@@ -1,0 +1,38 @@
+<svg width="14" height="14" viewBox="0 0 14 14" fill="none" xmlns="http://www.w3.org/2000/svg">
+<rect width="14" height="14" fill="#747171"/>
+<g id="Section 1">
+<path d="M-6386 -15354C-6386 -15355.1 -6385.1 -15356 -6384 -15356H46028C46029.1 -15356 46030 -15355.1 46030 -15354V12930C46030 12931.1 46029.1 12932 46028 12932H-6384C-6385.11 12932 -6386 12931.1 -6386 12930V-15354Z" fill="#404040"/>
+<path d="M-6384 -15355H46028V-15357H-6384V-15355ZM46029 -15354V12930H46031V-15354H46029ZM46028 12931H-6384V12933H46028V12931ZM-6385 12930V-15354H-6387V12930H-6385ZM-6384 12931C-6384.55 12931 -6385 12930.6 -6385 12930H-6387C-6387 12931.7 -6385.66 12933 -6384 12933V12931ZM46029 12930C46029 12930.6 46028.6 12931 46028 12931V12933C46029.7 12933 46031 12931.7 46031 12930H46029ZM46028 -15355C46028.6 -15355 46029 -15354.6 46029 -15354H46031C46031 -15355.7 46029.7 -15357 46028 -15357V-15355ZM-6384 -15357C-6385.66 -15357 -6387 -15355.7 -6387 -15354H-6385C-6385 -15354.6 -6384.55 -15355 -6384 -15355V-15357Z" fill="white" fill-opacity="0.1"/>
+<g id="CREATE A JOB POSTING">
+<rect width="1440" height="2633" transform="translate(-656 -1605)" fill="#F9F9F9"/>
+<g id="Job requirement frame" filter="url(#filter0_d_0_1)">
+<mask id="path-3-inside-1_0_1" fill="white">
+<path d="M-557 -1389C-557 -1391.76 -554.761 -1394 -552 -1394H679C681.761 -1394 684 -1391.76 684 -1389V937C684 939.761 681.761 942 679 942H-552C-554.761 942 -557 939.761 -557 937V-1389Z"/>
+</mask>
+<path d="M-557 -1389C-557 -1391.76 -554.761 -1394 -552 -1394H679C681.761 -1394 684 -1391.76 684 -1389V937C684 939.761 681.761 942 679 942H-552C-554.761 942 -557 939.761 -557 937V-1389Z" fill="white"/>
+<path d="M-557 -1389C-557 -1396.73 -550.732 -1403 -543 -1403H670C677.732 -1403 684 -1396.73 684 -1389V-1385C684 -1385 681.761 -1385 679 -1385H-552C-554.761 -1385 -557 -1385 -557 -1385V-1389ZM684 942H-557H684ZM-557 942V-1394V942ZM684 -1394V942V-1394Z" fill="#0266F4" mask="url(#path-3-inside-1_0_1)"/>
+<g id="Skills and Tools">
+<g id="Skills and Language">
+<g id="Frame 1000002377">
+<rect x="-451.5" y="-19.5" width="480" height="53" rx="4.5" stroke="#BABABA"/>
+<path id="Vector" d="M13 8H8V13C8 13.55 7.55 14 7 14C6.45 14 6 13.55 6 13V8H1C0.45 8 0 7.55 0 7C0 6.45 0.45 6 1 6H6V1C6 0.45 6.45 0 7 0C7.55 0 8 0.45 8 1V6H13C13.55 6 14 6.45 14 7C14 7.55 13.55 8 13 8Z" fill="black"/>
+</g>
+</g>
+</g>
+</g>
+</g>
+</g>
+<defs>
+<filter id="filter0_d_0_1" x="-580" y="-1417" width="1287" height="2382" filterUnits="userSpaceOnUse" color-interpolation-filters="sRGB">
+<feFlood flood-opacity="0" result="BackgroundImageFix"/>
+<feColorMatrix in="SourceAlpha" type="matrix" values="0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 127 0" result="hardAlpha"/>
+<feMorphology radius="5" operator="dilate" in="SourceAlpha" result="effect1_dropShadow_0_1"/>
+<feOffset/>
+<feGaussianBlur stdDeviation="9"/>
+<feComposite in2="hardAlpha" operator="out"/>
+<feColorMatrix type="matrix" values="0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0.15 0"/>
+<feBlend mode="normal" in2="BackgroundImageFix" result="effect1_dropShadow_0_1"/>
+<feBlend mode="normal" in="SourceGraphic" in2="effect1_dropShadow_0_1" result="shape"/>
+</filter>
+</defs>
+</svg>

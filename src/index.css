@@ -8,6 +8,15 @@ body{
     font-family: 'Open Sans', 'Helvetica Neue', sans-serif;
 }
 
+.form-error {
+    border-color: red !important;
+    border-width: 1px;
+}
+
+.form-error::placeholder{
+    color: red !important;
+}
+
 @layer base{
     html{
         @apply font-['Open_Sans']
@@ -21,5 +30,13 @@ body{
     }
     .page-width{
         @apply container mx-auto px-2
+    }
+
+    .job-poster input,.job-poster textarea{
+        @apply h-[45px] outline-none px-2 rounded-md border-black/50 border-[0.794px] placeholder:text-black/75 placeholder:font-light w-full
+    }
+
+    .job-poster textarea{
+        @apply lg:h-[300px] md:h-[250px] h-[150px] py-2
     }
 }
