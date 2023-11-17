@@ -2,29 +2,25 @@ import React from "react";
 import coverImg from "../../assets/homePage/responsive-website.png";
 import profilePicture from "../../assets/homePage/profilePic.svg";
 import coverImg2 from "../../assets/homePage/critick.svg";
+import { Select, Option } from "@material-tailwind/react";
 import { IoHeartOutline, IoEyeOutline } from "react-icons/io5";
+import Pagination from "../../components/Pagination";
 
 const Projects = () => {
   return (
     <div className="w-full my-20">
-      <div className="flex justify-between items-center border-b pb-2">
-        <h2 className="text-[30px] font-[700] text-fadedBlack">
+      <div className="flex flex-wrap gap-5 justify-center md:justify-between items-center border-b pb-2">
+        <h2 className="text-[30px] text-center font-[700] text-fadedBlack">
           Community Projects
         </h2>
 
-        <select
-          name="project"
-          id="project"
-          className="border border-[rgba(30,30,30,0.50)] rounded-[0.3rem] p-1"
-          defaultValue="filter-by"
-        >
-          <option value="filter-by" disabled>
-            Filter By
-          </option>
-          <option value="product-design">Product Design</option>
-          <option value="web-development">Web Development</option>
-          <option value="data-analysis">Data Analysis</option>
-        </select>
+        <div className="w-72">
+          <Select label="Filter By">
+            <Option value="product-design">Product Design</Option>
+            <Option value="web-development">Web Development</Option>
+            <Option value="data-analysis">Data Analysis</Option>
+          </Select>
+        </div>
       </div>
 
       {/* Project Mapping */}
@@ -155,6 +151,8 @@ const Projects = () => {
           </div>
         </div>
       </div>
+
+      <Pagination />
     </div>
   );
 };
