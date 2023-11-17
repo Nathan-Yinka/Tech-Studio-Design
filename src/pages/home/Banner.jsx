@@ -18,7 +18,10 @@ const Banner = () => {
           Engage in discussions, collaborate on projects, and build lasting
           relationships that could shape your tech journey.
         </p>
-        <button type="button" className="default-btn">
+        <button
+          type="button"
+          className="default-btn transition duration-300 hover:bg-transparent border hover:border-customBlue-100 hover:text-customBlue-100"
+        >
           Join Community
         </button>
       </div>
