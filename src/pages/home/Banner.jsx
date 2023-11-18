@@ -20,7 +20,7 @@ const Banner = () => {
         </p>
         <button
           type="button"
-          className="default-btn transition duration-300 hover:bg-transparent border hover:border-customBlue-100 hover:text-customBlue-100"
+          className="default-btn transition duration-300 hover:bg-transparent border hover:border-customBlue-100 hover:text-customBlue-100 font-[700]"
         >
           Join Community
         </button>

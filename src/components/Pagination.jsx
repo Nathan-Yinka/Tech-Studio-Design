@@ -10,9 +10,9 @@ const Pagination = () => {
 
   const getItemProps = (index) => ({
     variant: active === index ? "filled" : "text",
-    color: "gray",
+    color: "blue",
     onClick: () => setActive(index),
-    className: "rounded-full",
+    className:`rounded-full bg-[#E3E3E3] font-bold text-customBlue-100 text-lg ${active === index?"bg-customBlue-100 text-white":""}`,
   });
 
   const next = () => {
