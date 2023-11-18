@@ -52,7 +52,7 @@ const Navbar = () => {
               hamburger ? "items-baseline gap-10 flex-col-reverse" : ""
             }`}
           >
-            <li>Explore Community</li>
+            <Link to="community"><li>Explore Community</li></Link>
             <li>Find Talent</li>
             <li>For You</li>
           </ul>

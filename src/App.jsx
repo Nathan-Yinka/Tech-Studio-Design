@@ -7,6 +7,7 @@ import SignUp from "./pages/authentication/SignUp";
 import LandingPage from "./pages/home/LandingPage";
 import FindTalent from "./pages/talent/FindTalent";
 import ExternalLayout from "./pages/Layouts/ExternalLayout";
+import Community from "./pages/community/Community";
 
 function App() {
   return (
@@ -18,11 +19,11 @@ function App() {
           <Route path="/password-reset" element={<PasswordReset />} />
           <Route path="/new-password" element={<NewPassword />} />
 
-          <Route element={<ExternalLayout/>}>
+          <Route element={<ExternalLayout />}>
             <Route path="/" element={<LandingPage />} />
             <Route path="/talent" element={<FindTalent />} />
+            <Route path="/community" element={<Community />} />
           </Route>
-
         </Routes>
       </Router>
     </>

@@ -1,10 +1,8 @@
 import React from "react";
-import coverImg from "../../assets/homePage/responsive-website.png";
-import profilePicture from "../../assets/homePage/profilePic.svg";
-import coverImg2 from "../../assets/homePage/critick.svg";
+import Pagination from "../../components/Pagination";
+import { communityProjects } from "./db";
 import { Select, Option } from "@material-tailwind/react";
 import { IoHeartOutline, IoEyeOutline } from "react-icons/io5";
-import Pagination from "../../components/Pagination";
 
 const Projects = () => {
   return (
@@ -25,131 +23,32 @@ const Projects = () => {
 
       {/* Project Mapping */}
       <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-10 my-10">
-        <div className="max-w-[386px] w-full mx-auto">
-          <div
-            className="w-full h-[272px] border border-[#D9D9D9] rounded-[10px] bg-contain bg-center bg-no-repeat"
-            style={{ backgroundImage: `url(${coverImg})` }}
-          ></div>
-          <div className="flex items-center justify-between py-2">
-            <div className="flex items-center gap-2">
-              <img src={profilePicture} alt="profilePicture" />
-              <p className="tracking-[0.4px]">User Name</p>
-            </div>
-            <div className="flex items-center gap-5">
-              <p className="flex items-center gap-2">
-                <IoHeartOutline /> <span>232</span>
-              </p>
-              <p className="flex items-center gap-2">
-                <IoEyeOutline /> <span>1.4k</span>
-              </p>
-            </div>
-          </div>
-        </div>
+        {communityProjects.map((project) => {
+          const { id, image, profilePicture, name, likes, views } = project;
 
-        <div className="max-w-[386px] w-full mx-auto">
-          <div
-            className="w-full h-[272px] border border-[#D9D9D9] rounded-[10px] bg-contain bg-center bg-no-repeat"
-            style={{ backgroundImage: `url(${coverImg})` }}
-          ></div>
-          <div className="flex items-center justify-between py-2">
-            <div className="flex items-center gap-2">
-              <img src={profilePicture} alt="profilePicture" />
-              <p className="tracking-[0.4px]">User Name</p>
+          return (
+            <div key={id} className="max-w-[386px] w-full mx-auto">
+              <div
+                className="w-full h-[272px] border border-[#D9D9D9] rounded-[10px] bg-contain bg-center bg-no-repeat"
+                style={{ backgroundImage: `url(${image})` }}
+              ></div>
+              <div className="flex items-center justify-between py-2">
+                <div className="flex items-center gap-2">
+                  <img src={profilePicture} alt="profilePicture" />
+                  <p className="tracking-[0.4px]">{name}</p>
+                </div>
+                <div className="flex items-center gap-5">
+                  <p className="flex items-center gap-2">
+                    <IoHeartOutline /> <span>{likes}</span>
+                  </p>
+                  <p className="flex items-center gap-2">
+                    <IoEyeOutline /> <span>{views}</span>
+                  </p>
+                </div>
+              </div>
             </div>
-            <div className="flex items-center gap-5">
-              <p className="flex items-center gap-2">
-                <IoHeartOutline /> <span>232</span>
-              </p>
-              <p className="flex items-center gap-2">
-                <IoEyeOutline /> <span>1.4k</span>
-              </p>
-            </div>
-          </div>
-        </div>
-
-        <div className="max-w-[386px] w-full mx-auto">
-          <div
-            className="w-full h-[272px] border border-[#D9D9D9] rounded-[10px] bg-contain bg-center bg-no-repeat"
-            style={{ backgroundImage: `url(${coverImg})` }}
-          ></div>
-          <div className="flex items-center justify-between py-2">
-            <div className="flex items-center gap-2">
-              <img src={profilePicture} alt="profilePicture" />
-              <p className="tracking-[0.4px]">User Name</p>
-            </div>
-            <div className="flex items-center gap-5">
-              <p className="flex items-center gap-2">
-                <IoHeartOutline /> <span>232</span>
-              </p>
-              <p className="flex items-center gap-2">
-                <IoEyeOutline /> <span>1.4k</span>
-              </p>
-            </div>
-          </div>
-        </div>
-
-        <div className="max-w-[386px] w-full mx-auto">
-          <div
-            className="w-full h-[272px] border border-[#D9D9D9] rounded-[10px] bg-contain bg-center bg-no-repeat"
-            style={{ backgroundImage: `url(${coverImg2})` }}
-          ></div>
-          <div className="flex items-center justify-between py-2">
-            <div className="flex items-center gap-2">
-              <img src={profilePicture} alt="profilePicture" />
-              <p className="tracking-[0.4px]">User Name</p>
-            </div>
-            <div className="flex items-center gap-5">
-              <p className="flex items-center gap-2">
-                <IoHeartOutline /> <span>232</span>
-              </p>
-              <p className="flex items-center gap-2">
-                <IoEyeOutline /> <span>1.4k</span>
-              </p>
-            </div>
-          </div>
-        </div>
-
-        <div className="max-w-[386px] w-full mx-auto">
-          <div
-            className="w-full h-[272px] border border-[#D9D9D9] rounded-[10px] bg-contain bg-center bg-no-repeat"
-            style={{ backgroundImage: `url(${coverImg2})` }}
-          ></div>
-          <div className="flex items-center justify-between py-2">
-            <div className="flex items-center gap-2">
-              <img src={profilePicture} alt="profilePicture" />
-              <p className="tracking-[0.4px]">User Name</p>
-            </div>
-            <div className="flex items-center gap-5">
-              <p className="flex items-center gap-2">
-                <IoHeartOutline /> <span>232</span>
-              </p>
-              <p className="flex items-center gap-2">
-                <IoEyeOutline /> <span>1.4k</span>
-              </p>
-            </div>
-          </div>
-        </div>
-
-        <div className="max-w-[386px] w-full mx-auto">
-          <div
-            className="w-full h-[272px] border border-[#D9D9D9] rounded-[10px] bg-contain bg-center bg-no-repeat"
-            style={{ backgroundImage: `url(${coverImg2})` }}
-          ></div>
-          <div className="flex items-center justify-between py-2">
-            <div className="flex items-center gap-2">
-              <img src={profilePicture} alt="profilePicture" />
-              <p className="tracking-[0.4px]">User Name</p>
-            </div>
-            <div className="flex items-center gap-5">
-              <p className="flex items-center gap-2">
-                <IoHeartOutline /> <span>232</span>
-              </p>
-              <p className="flex items-center gap-2">
-                <IoEyeOutline /> <span>1.4k</span>
-              </p>
-            </div>
-          </div>
-        </div>
+          );
+        })}
       </div>
 
       <Pagination />
