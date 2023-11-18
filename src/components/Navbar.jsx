@@ -53,7 +53,7 @@ const Navbar = () => {
               hamburger ? "items-baseline gap-10 flex-col-reverse" : ""
             }`}
           >
-            <li onClick={hamburger?handleClick:()=>{}}>Explore Community</li>
+            <NavLink to={"/community"}><li onClick={hamburger?handleClick:()=>{}} className={`${location.pathname === '/community' ? 'active' : ''}`}>Explore Community</li></NavLink>
             <NavLink to={"/talent"} onClick={hamburger?handleClick:()=>{}}><li className={`${location.pathname === '/talent' ? 'active' : ''}`}>Find Talent</li></NavLink>
             <li onClick={hamburger?handleClick:()=>{}}>For You</li>
           </ul>

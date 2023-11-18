@@ -9,6 +9,7 @@ import FindTalent from "./pages/talent/FindTalent";
 import ExternalLayout from "./pages/Layouts/ExternalLayout";
 import JobPoster from "./pages/talent/JobPoster";
 import {AnimatePresence } from "framer-motion"
+import Community from "./pages/community/Community";
 
 function App() {
   const location = useLocation()
@@ -22,9 +23,10 @@ function App() {
           <Route path="/new-password" element={<NewPassword />} />
           <Route path="/job-poster" element={<JobPoster />} />
 
-          <Route element={<ExternalLayout/>}>
+          <Route element={<ExternalLayout />}>
             <Route path="/" element={<LandingPage />} />
             <Route path="/talent" element={<FindTalent />} />
+            <Route path="/community" element={<Community />} />
           </Route>
         </Routes>
         </AnimatePresence>
