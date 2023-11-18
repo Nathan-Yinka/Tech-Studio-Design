@@ -36,7 +36,7 @@ const customSlideVariants = {
       }
 }
 
-const JobPostCustomSelect = ({dropDownValue,setDropDownValue,className,dropDownData,placeholder}) => {
+const JobPostCustomSelect = ({dropDownValue,setDropDownValue,className,dropDownData,placeholder,error}) => {
     const [showDropDown, setShowDropDown] = useState(false)
 
     const handleClick = (value)=>{
@@ -49,9 +49,9 @@ const JobPostCustomSelect = ({dropDownValue,setDropDownValue,className,dropDownD
      <motion.div 
      initial={false}
      whileTap={{ scale: 0.97 }}
-     className={`w-full outline-none px-2 py-2.5 rounded-md border-black/50 border-[0.794px] ${!dropDownValue && "text-black/75 font-light"} ${className}`}>
+     className={`w-full outline-none px-2 py-2.5 rounded-md border-black/50 border-[0.794px] ${!dropDownValue && "text-black/75 font-light"} ${error && "form-error"} ${className}`}>
         <div className='flex   items-center' onClick={()=>setShowDropDown(!showDropDown)} >
-            <div className=' cursor-default truncate grow'>{dropDownValue?dropDownValue:placeholder}</div>
+            <div className={`cursor-default truncate grow ${error && "text-red-500"}`}>{dropDownValue?dropDownValue:placeholder}</div>
             <div className={`pr-3  ${showDropDown && "rotate-180 pl-3 transition"}`}><img src={dropIcon} alt="" /></div>
         </div>
     </motion.div>
@@ -60,7 +60,7 @@ const JobPostCustomSelect = ({dropDownValue,setDropDownValue,className,dropDownD
         className={`flex flex-col divide-y bg-[#C6C6C6] ${showDropDown && "mt-4"} border-1`}>
         {dropDownData && dropDownData.map((item,index)=>{
             return(
-        <motion.div variants={itemVariants} className='p-3 font-light' key={index} onClick={()=>handleClick(item)} >{item}</motion.div>)
+        <motion.div variants={itemVariants} className='p-3 font-light cursor-default hover:bg-[#a7a7a7]' key={index} onClick={()=>handleClick(item)} >{item}</motion.div>)
         })}
     </motion.div>
    </motion.div>

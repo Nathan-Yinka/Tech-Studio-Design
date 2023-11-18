@@ -3,7 +3,7 @@ import plus from "../assets/talent/plus.svg"
 import useAxiosFetch from '../hooks/useAxiosFetch';
 import useAxiosPost from '../hooks/useAxiosPost';
 
-const MultipleChoices = ({initialChoices,endpoint,setSelectedChoices,selectedChoices,placeholder}) => {
+const MultipleChoices = ({initialChoices,endpoint,setSelectedChoices,selectedChoices,placeholder,className}) => {
     const [newChoice, setNewChoice] = useState('');
     const [choices, setChoices] = useState([]);
     const queryParams = new URLSearchParams(window.location.search);
@@ -35,7 +35,7 @@ const MultipleChoices = ({initialChoices,endpoint,setSelectedChoices,selectedCho
         if (isPosting) {
             return;
         }
-        
+
         if (newChoice.trim() !== '') {
     
             var formdata = new FormData();
@@ -53,7 +53,7 @@ const MultipleChoices = ({initialChoices,endpoint,setSelectedChoices,selectedCho
             placeholder={placeholder}
             value={newChoice}
             onChange={(e) => setNewChoice(e.target.value)}
-            className={``}
+            className={className}
             maxLength={20}
             type="text" />
              <button type="button" className=' absolute right-[10px] top-[15px]' onClick={handleAddChoice}><img src={plus} alt="" /></button>

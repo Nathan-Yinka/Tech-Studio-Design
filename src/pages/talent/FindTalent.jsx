@@ -22,7 +22,7 @@ const FindTalent = () => {
 
   useEffect(()=>{
     if (response && !postError){
-        navigate(`/job-poster?email=${mail}`);
+        navigate(`/job-poster?email=${mail.toLowerCase()}`);
     }
 },[response])
 
@@ -47,7 +47,7 @@ const FindTalent = () => {
     if (errorFound) return;
 
     var formdata = new FormData();
-    formdata.append("email", mail);
+    formdata.append("email", mail.toLowerCase());
     formdata.append("full_name", name);
     triggerPost(formdata,`${apiUrl}/api/jobs/`);    
 }

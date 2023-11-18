@@ -1,18 +1,19 @@
 import React, { useState } from "react";
 import logo from "../assets/navbar/TSA community 1.svg";
-import { Link,NavLink } from "react-router-dom";
+import { Link,NavLink, useLocation } from "react-router-dom";
 import { GiHamburgerMenu } from "react-icons/gi";
 import { AiOutlineClose } from "react-icons/ai";
 
 const Navbar = () => {
   const [hamburger, setHamburger] = useState(false);
+  const location = useLocation();
 
   const handleClick = () => {
     setHamburger(!hamburger);
   };
   return (
     <div
-      className={`sticky z-40 inset-x-0 top-0 bg-customBlue-200 text-white py-5`}
+      className={`sticky z-40 inset-x-0 top-0 bg-customBlue-200 text-white py-5 navbar`}
     >
       <div
         className={`page-width ${
@@ -21,7 +22,7 @@ const Navbar = () => {
       >
         <div className="w-full lg:w-auto flex justify-between items-center">
           <NavLink to="/">
-            <img src={logo} alt="logo" />
+            <img src={logo} alt="logo" onClick={hamburger?handleClick:()=>{}}/>
           </NavLink>
 
           <div onClick={handleClick} className="lg:hidden text-2xl">
@@ -52,16 +53,16 @@ const Navbar = () => {
               hamburger ? "items-baseline gap-10 flex-col-reverse" : ""
             }`}
           >
-            <li onClick={hamburger && handleClick}>Explore Community</li>
-            <NavLink to={"/talent"} onClick={hamburger && handleClick}><li>Find Talent</li></NavLink>
-            <li onClick={hamburger && handleClick}>For You</li>
+            <li onClick={hamburger?handleClick:()=>{}}>Explore Community</li>
+            <NavLink to={"/talent"} onClick={hamburger?handleClick:()=>{}}><li className={`${location.pathname === '/talent' ? 'active' : ''}`}>Find Talent</li></NavLink>
+            <li onClick={hamburger?handleClick:()=>{}}>For You</li>
           </ul>
           <div className="flex flex-wrap items-center gap-5">
             <Link to="signup">
               <button
                 type="button"
-                className={`default-btn`}
-                onClick={hamburger && handleClick}
+                className={`default-btn font-bold ${location.pathname === '/signup' ? 'text-red-400' : ''}`}
+                onClick={hamburger?handleClick:()=>{}}
               >
                 Register
               </button>
@@ -69,8 +70,8 @@ const Navbar = () => {
             <Link to="login">
               <button
                 type="button"
-                onClick={hamburger && handleClick}
-                className={`${
+                onClick={hamburger?handleClick:()=>{}}
+                className={`font-bold ${
                   hamburger
                     ? "default-btn bg-white hover:bg-slate-200 text-customBlue-100"
                     : ""

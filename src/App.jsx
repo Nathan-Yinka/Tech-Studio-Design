@@ -1,5 +1,5 @@
 import React from "react";
-import { BrowserRouter as Router, Route, Routes } from "react-router-dom";
+import { BrowserRouter as Router, Route, Routes,useLocation } from "react-router-dom";
 import Login from "./pages/authentication/Login";
 import NewPassword from "./pages/authentication/NewPassword";
 import PasswordReset from "./pages/authentication/PasswordReset";
@@ -8,12 +8,14 @@ import LandingPage from "./pages/home/LandingPage";
 import FindTalent from "./pages/talent/FindTalent";
 import ExternalLayout from "./pages/Layouts/ExternalLayout";
 import JobPoster from "./pages/talent/JobPoster";
+import {AnimatePresence } from "framer-motion"
 
 function App() {
+  const location = useLocation()
   return (
     <>
-      <Router>
-        <Routes>
+      <AnimatePresence>
+        <Routes location={location} key={location.key}>
           <Route path="/login" element={<Login />} />
           <Route path="/signup" element={<SignUp />} />
           <Route path="/password-reset" element={<PasswordReset />} />
@@ -25,7 +27,7 @@ function App() {
             <Route path="/talent" element={<FindTalent />} />
           </Route>
         </Routes>
-      </Router>
+        </AnimatePresence>
     </>
   );
 }
