@@ -10,9 +10,8 @@ import useAxiosPost from "../../hooks/useAxiosPost";
 import useClearFormError from "../../hooks/useClearFormError";
 import Spinners from "../loaders/Spinner";
 import JobSubmissionModal from "./JobSubmissionModal";
-import {motion,AnimatePresence } from "framer-motion"
-import { Alert, Progress } from "@material-tailwind/react";
-import { GoAlert } from "react-icons/go";
+import {AnimatePresence } from "framer-motion"
+import AlertWithProgress from "../../components/AlertWithProgress";
 
 const JobPoster = () => {
   const apiUrl = "https://techstudiocommunity.onrender.com";
@@ -39,11 +38,6 @@ const JobPoster = () => {
   const [formErrors, setFormErrors] = useState({});
   const [modal, setModal] = useState(false);
   const [alert,setAlert] = useState(false)
-  const startCount = 100;
-  const stopCount = 0;
-  const duration = 5000; // milliseconds
-  const intervalTime = duration / Math.abs(startCount - stopCount);
-  const [count, setCount] = useState(startCount);
   const queryParams = new URLSearchParams(window.location.search);
   const emailParam = queryParams.get("email");
   const navigate = useNavigate();
@@ -88,26 +82,8 @@ const JobPoster = () => {
     }
     if (!response && postError) {
       setAlert(true)
-      setCount(100)
     }
   }, [response, postError]);
-
-  useEffect(() => {
-    if(alert){
-        const countDown = setInterval(() => {
-            if (count === stopCount) {
-                clearInterval(countDown)
-                setAlert(false)
-                setCount(100)
-            }
-            else{
-              setCount((prevCount) => (startCount > stopCount ? prevCount - 1 : prevCount + 1));
-            }
-          }, intervalTime);
-      
-          return () => clearInterval(countDown);
-    }
-  }, [count, intervalTime,alert]);
 
   // checks if a object is empty or not
   const isEmpty = (obj) => {
@@ -207,25 +183,10 @@ const JobPoster = () => {
 
   return (
     <div>
-      {alert && (
-        <div className="fixed top-0 z-30 w-full">
-          <Alert
-            open={alert}
-            onClose={() => setAlert(false)}
-            animate={{
-              mount: { y: 0 },
-              unmount: { y: 100 },
-            }}
-            variant="filled"
-            color="red"
-            className=" bg-red-700 text-white font-bold flex items-center rounded-none"
-            icon={<GoAlert />}
-          >
-            An Error Occurred
-          </Alert>
-          <Progress value={count} size="sm" className=" !rounded-none h-1" variant="filled" color="blue"/>
-        </div>
-      )}
+      <AlertWithProgress
+      alert = {alert}
+      setAlert={setAlert}
+      />
       <AnimatePresence>{isLoading && <LoaderPage1 />}</AnimatePresence>
       {fetchError && !isLoading && <ErrorPage message={fetchError} />}
       {!fetchError && !isLoading && (

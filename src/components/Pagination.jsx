@@ -12,7 +12,7 @@ const Pagination = () => {
     variant: active === index ? "filled" : "text",
     color: "blue",
     onClick: () => setActive(index),
-    className:`rounded-full bg-[#E3E3E3] font-bold text-customBlue-100 text-lg ${active === index?"bg-customBlue-100 text-white":""}`,
+    className:`rounded-full bg-[#E3E3E3] w-[2rem] h-[2rem] font-bold text-customBlue-100 text-lg ${active === index?"bg-customBlue-100 text-white":""}`,
   });
 
   const next = () => {

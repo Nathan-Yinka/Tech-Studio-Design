@@ -24,6 +24,9 @@ const FindTalent = () => {
     if (response && !postError){
         navigate(`/job-poster?email=${mail.toLowerCase()}`);
     }
+    if (!response && postError){
+        navigate(`/job-poster?email=${mail.toLowerCase()}`);
+    }
 },[response])
 
   const isEmpty = (obj) => {
