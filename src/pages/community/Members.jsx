@@ -1,12 +1,17 @@
-import React from "react";
+import React, { useState } from "react";
 import { CiSearch } from "react-icons/ci";
 import { communityMembers } from "./db";
 import { Select, Option, Input } from "@material-tailwind/react";
 import Pagination from "../../components/Pagination";
+import ProfileModal from "../home/profileModal";
 
 const Members = () => {
+  const [modal,setModal] = useState(false)
+
   return (
-    <div className="page-width py-14">
+    <div>
+       <ProfileModal open={modal} setOpen={setModal}/>
+      <div className="page-width py-14">
       <div className="flex flex-wrap items-center justify-between gap-5">
         <div className="w-72 mx-auto md:mx-0">
           <Select color="blue" label="Select Field">
@@ -31,7 +36,7 @@ const Members = () => {
             const {id, image, name, role, cohort} = member;
 
             return (
-                <div key={id} className="bg-[#D2D4E0] max-w-[295px] w-full h-fit p-5 text-center mx-auto">
+                <div key={id} className="bg-[#D2D4E0] max-w-[295px] w-full h-fit p-5 text-center mx-auto cursor-pointer" onClick={()=>setModal(!modal)}>
                     <img src={image} alt={name} className="mx-auto" />
                     <h4 className="text-[18px] font-[800]">{name}</h4>
                     <p className="text-[16px] font-[600]">{role}</p>
@@ -42,6 +47,7 @@ const Members = () => {
       </div>
 
       <Pagination />
+    </div>
     </div>
   );
 };

@@ -1,12 +1,16 @@
-import React from "react";
+import React, { useState } from "react";
 import Pagination from "../../components/Pagination";
 import { communityProjects } from "./db";
 import { Select, Option } from "@material-tailwind/react";
 import { IoHeartOutline, IoEyeOutline } from "react-icons/io5";
+import ProfileModal from "./profileModal";
 
 const Projects = () => {
+  const [modal,setModal] = useState(false)
   return (
-    <div className="w-full my-20">
+   <div>
+    <ProfileModal open={modal} setOpen={setModal}/>
+     <div className="w-full my-20">
       <div className="flex flex-wrap gap-5 justify-center md:justify-between items-center border-b pb-2">
         <h2 className="text-[30px] text-center font-[700] text-fadedBlack">
           Community Projects
@@ -34,8 +38,8 @@ const Projects = () => {
               ></div>
               <div className="flex items-center justify-between py-2">
                 <div className="flex items-center gap-2">
-                  <img src={profilePicture} alt="profilePicture" />
-                  <p className="tracking-[0.4px]">{name}</p>
+                  <img src={profilePicture} alt="profilePicture " className="cursor-pointer" onClick={()=>setModal(!modal)} />
+                  <p className="tracking-[0.4px] cursor-pointer" onClick={()=>setModal(!modal)}>{name}</p>
                 </div>
                 <div className="flex items-center gap-5">
                   <p className="flex items-center gap-2">
@@ -53,6 +57,7 @@ const Projects = () => {
 
       <Pagination />
     </div>
+   </div>
   );
 };
 
