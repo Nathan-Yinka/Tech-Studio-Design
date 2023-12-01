@@ -5,6 +5,7 @@ import { Select, Option } from "@material-tailwind/react";
 import { IoHeartOutline, IoEyeOutline } from "react-icons/io5";
 import ProfileModal from "./profileModal";
 import { ProjectModal } from "./ProjectModal";
+import SkeletonLoader from "../loaders/SkeletonLoader";
 
 const Projects = () => {
   const [modal,setModal] = useState(false)
@@ -32,6 +33,7 @@ const Projects = () => {
 
       {/* Project Mapping */}
       <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-10 my-10">
+        {/* <SkeletonLoader /> */}
         {communityProjects.map((project) => {
           const { id, image, profilePicture, name, likes, views } = project;
 

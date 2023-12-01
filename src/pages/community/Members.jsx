@@ -31,9 +31,9 @@ const Members = () => {
       </div>
 
       {/* Users */}
-      <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-10 my-14">
+      <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-5 md:gap-10 my-14">
         {communityMembers.map((member) => {
-            const {id, image, name, role, cohort} = member;
+          const { id, image, name, role, cohort } = member;
 
             return (
                 <div key={id} className="bg-[#D2D4E0] max-w-[295px] w-full h-fit p-5 text-center mx-auto cursor-pointer" onClick={()=>setModal(!modal)}>
