@@ -4,11 +4,16 @@ import { communityProjects } from "./db";
 import { Select, Option } from "@material-tailwind/react";
 import { IoHeartOutline, IoEyeOutline } from "react-icons/io5";
 import ProfileModal from "./profileModal";
+import { ProjectModal } from "./ProjectModal";
 
 const Projects = () => {
   const [modal,setModal] = useState(false)
+  const [projectModal,setProjectModal] = useState(false)
+
+  const handleProjectModal = () => setProjectModal((cur) => !cur);
   return (
    <div>
+    <ProjectModal open={projectModal} setOpen={setProjectModal}/>
     <ProfileModal open={modal} setOpen={setModal}/>
      <div className="w-full my-20">
       <div className="flex flex-wrap gap-5 justify-center md:justify-between items-center border-b pb-2">
@@ -32,7 +37,7 @@ const Projects = () => {
 
           return (
             <div key={id} className="max-w-[386px] w-full mx-auto">
-              <div
+              <div onClick={handleProjectModal}
                 className="w-full h-[272px] border border-[#D9D9D9] rounded-[10px] bg-contain bg-center bg-no-repeat"
                 style={{ backgroundImage: `url(${image})` }}
               ></div>

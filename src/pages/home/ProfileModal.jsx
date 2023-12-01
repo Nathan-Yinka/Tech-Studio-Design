@@ -30,7 +30,7 @@ const ProfileModal = ({open,setOpen}) => {
             <div className="w-1/3"><img src={project3} alt="" className="h-full w-full"/></div>
 
             <div className=" absolute left-1/2 bottom-[-100px] transform -translate-x-1/2 -translate-y-1/2">
-                <Avatar src={avatar} className="h-[100px] w-[100px]"/>
+                <Avatar src={avatar} className="h-[100px] w-[100px]" variant="circular"/>
             </div>
         </div>
         <div>
